@@ -1,40 +1,12 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Products from './Products';
-import { Text, View } from 'react-native';
-
-function AddProduct() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Add Product Screen</Text>
-    </View>
-  );
-}
-
-function SearchProduct() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Search Product Screen</Text>
-    </View>
-  );
-}
-
-const Tab = createBottomTabNavigator();
+import { SafeAreaView, StatusBar } from 'react-native';
+import Product_Add from './Products/Product_Add'; // Assuming the path is correct
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        {/* Products Tab */}
-        <Tab.Screen name="Products" component={Products} />
-
-        {/* Add Product Tab */}
-        <Tab.Screen name="Add Product" component={AddProduct} />
-
-        {/* Search Product Tab */}
-        <Tab.Screen name="Search Product" component={SearchProduct} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8f8f8' }}>
+      <StatusBar barStyle="dark-content" />
+      <Product_Add />
+    </SafeAreaView>
   );
 }
